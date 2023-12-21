@@ -15,7 +15,8 @@ class MyHandler(FileSystemEventHandler):
         # ファイルが変更されたらそのファイルを処理する
         if event.event_type == 'modified':
             image_path = event.src_path
-            process_image(image_path)
+            #process_image(image_path)
+            return image_path
 
 #監視用の関数
 def watch_directory(directory_path):
@@ -34,5 +35,5 @@ def watch_directory(directory_path):
 
 if __name__ == "__main__":
     # 監視するディレクトリのパスを指定
-    directory_to_watch = "./GitHub/OOP2-11-web-image/img"
+    directory_to_watch = "./GitHub/OOP2-11-web-image/img/before"
     watch_directory(directory_to_watch)
