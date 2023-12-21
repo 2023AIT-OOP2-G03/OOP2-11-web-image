@@ -162,5 +162,5 @@ cython_debug/
 # Mac
 .DS_Store
 
-./img/after/*
-./img/before/*
+img/after/*
+img/before/*
