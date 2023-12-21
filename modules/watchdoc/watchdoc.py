@@ -2,11 +2,11 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-#ファイルのパスを表示する関数
-def process_image(image_path):
-    print(f"Processing image: {image_path}")
+#ファイルのパスを表示する関数(デバック用)
+#def process_image(image_path):
+    #print(f"Processing image: {image_path}")
 
-#ファイルが変更された場合に、process_image関数を呼び出すクラス
+#ファイルが変更された場合に、そのファイルのパスを返すクラス
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if event.is_directory:
