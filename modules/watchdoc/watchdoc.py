@@ -41,7 +41,7 @@ def watch_directory(directory_path):
 
 if __name__ == "__main__":
     # 監視するディレクトリのパスを指定
-    directory_to_watch = "./GitHub/OOP2-11-webimage/img/before"
+    # directory_to_watch = "./GitHub/OOP2-11-webimage/img/before"
     #正木の環境のデバッグ用パス
     directory_to_watch = "./img/before"
     watch_directory(directory_to_watch)
