@@ -3,13 +3,17 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 #ファイルのパスを表示する関数(デバック用)
-#def process_image(image_path):
-    #print(f"Processing image: {image_path}")
+def process_image(image_path):
+    print(f"Processing image: {image_path}")
 
 #ファイルが変更された場合に、そのファイルのパスを返すクラス
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if event.is_directory:
+            return
+
+        #.DS_Storeを無視する
+        if event.src_path.endswith('.DS_Store'):
             return
 
         # ファイルが変更されたらそのファイルを処理する
@@ -18,6 +22,7 @@ class MyHandler(FileSystemEventHandler):
             #ここをコメントアウトすると表示されなくなる
             process_image(image_path)
             return image_path
+            
 
 #監視用の関数
 def watch_directory(directory_path):
