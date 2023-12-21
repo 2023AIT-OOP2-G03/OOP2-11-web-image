@@ -14,6 +14,7 @@ class MyHandler(FileSystemEventHandler):
 
         #.DS_Storeを無視する
         if event.src_path.endswith('.DS_Store'):
+            # print("DS_Storeを無視しました")
             return
 
         # ファイルが変更されたらそのファイルを処理する
@@ -22,7 +23,6 @@ class MyHandler(FileSystemEventHandler):
             #ここをコメントアウトすると表示されなくなる
             process_image(image_path)
             return image_path
-            
 
 #監視用の関数
 def watch_directory(directory_path):
