@@ -10,7 +10,7 @@ def index():
 
         if uploaded_file:
             # 画像を保存するディレクトリ（staticディレクトリ内に保存する例）
-            upload_folder = 'web/static/uploads'
+            upload_folder = 'img/before'
             uploaded_file.save(f'{upload_folder}/{uploaded_file.filename}')
 
             # アップロードが完了したメッセージを表示
