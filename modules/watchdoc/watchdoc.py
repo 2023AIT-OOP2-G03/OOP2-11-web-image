@@ -19,6 +19,7 @@ class MyHandler(FileSystemEventHandler):
         # ファイルが変更されたらそのファイルを処理する
         if event.event_type == 'modified':
             image_path = event.src_path
+            #ここをコメントアウトすると表示されなくなる
             process_image(image_path)
             return image_path
             
@@ -40,5 +41,7 @@ def watch_directory(directory_path):
 
 if __name__ == "__main__":
     # 監視するディレクトリのパスを指定
-    directory_to_watch = "/GitHub/OOP2-11-web-image/img/before"
+    directory_to_watch = "./GitHub/OOP2-11-webimage/img/before"
+    #正木の環境のデバッグ用パス
+    directory_to_watch = "./img/before"
     watch_directory(directory_to_watch)
